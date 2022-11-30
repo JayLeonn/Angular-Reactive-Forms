@@ -1,0 +1,32 @@
+<form (ngSubmit)="handleSubmit()" [formGroup]="bookDetailsForm">
+  <label for="author">Author </label>
+  <!-- [(ngModel)]="book.author" -->
+  <input id="author" formControlName="author" />
+  <div *ngIf="bookDetailsForm.controls.author.errors" style="color: red">
+    Author is required!
+  </div>
+
+  <br />
+
+  <label for="title">Title </label>
+  <!-- [(ngModel)]="book.title" -->
+  <input id="title" formControlName="title" />
+  <div *ngIf="bookDetailsForm.controls.title.errors" style="color: red">
+    Title is required!
+  </div>
+
+  <br />
+
+  <label for="price">Price </label>
+  <!-- [(ngModel)]="book.price" -->
+  <input id="price" formControlName="price" type="number" />
+  <div *ngIf="bookDetailsForm.controls.price.errors" style="color: red">
+    Price has to be less than 50euros!
+  </div>
+
+  <br />
+
+  <button type="submit" [disabled]="bookDetailsForm.invalid">
+    {{ bookId ? "Update" : "Create" }}
+  </button>
+</form>

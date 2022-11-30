@@ -1,0 +1,15 @@
+.ng-valid {
+  border: 1px solid #42a948;
+}
+
+.ng-invalid {
+  border: 1px solid #a94442;
+}
+
+form {
+  padding: 15px;
+}
+
+form * {
+  margin: 5px 0;
+}
